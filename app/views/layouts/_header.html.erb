@@ -1,8 +1,56 @@
-<% if current_user.present? %>
-  <%= current_user.email %>
-  <%= link_to 'Account Settings', edit_user_registration_path %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Signup', new_user_registration_path %>
-  <%= link_to 'Log in', new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% if current_user.present? %>
+      <ul class="navbar-nav">
+        <li class="nav-item <%= 'active font-weight-bold' if current_page?(root_path) %>" >
+          <%= link_to root_path, class: "nav-link" do %>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Home
+          <% end %>
+        </li>
+        <li class="nav-item <%= 'active font-weight-bold' if current_page?(courses_path) %>" >
+          <%= link_to courses_path, class: "nav-link" do %>
+            <i class="fa fa-book" aria-hidden="true"></i>
+            Courses_path
+          <% end %>
+        </li>
+      </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="d-flex align-item-center list-unstyled mb-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.email %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                Account Settings
+              <% end %>
+              <%= link_to destroy_user_session_path, class: "dropdown-item", method: :delete do %>
+                <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                Logout
+              <% end %>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item nav-link">
+              <a href="#">another link</a>
+          </li>
+        </ul>
+    <% else %>
+      <ul class="d-flex list-unstyled mb-0 ml-5">
+        <li class="nav-item mr-3 <%= 'font-weight-bold' if current_page?(new_user_registration_path) %> "><%= link_to 'Signup', new_user_registration_path %></li>
+        <li class="nav-item <%= 'font-weight-bold' if current_page?(new_user_session_path) %> "><%= link_to 'Log in', new_user_session_path %></li>
+      </ul>
+    <%end%>
+  </div>
+</nav>
