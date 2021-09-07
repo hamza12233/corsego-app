@@ -1,1 +1,36 @@
+<div class="jumbotron">
+  <p class="display-4">what do you want to learn today?</p>
+  <%= form_tag courses_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
+    <%= text_field_tag(
+        :search,
+        params[:search],
+        placeholder: "Search",
+        class: "form-control fa fa-search"
+    ) %>
 
+  <% end %>
+
+</div>
+<hr>
+<h2>Popular Courses</h2>
+<div class="card-columns">
+  <%@courses.each do |course| %>
+    <%= render 'courses/course', course: course%>
+  <% end %>
+</div>
+
+<hr>
+<h2>Top Rated Courses</h2>
+<div class="card-columns">
+  <%@courses.each do |course| %>
+    <%= render 'courses/course', course: course%>
+  <% end %>
+</div>
+
+<hr>
+<h2>Most Recent Courses</h2>
+<div class="card-columns">
+  <%@courses.each do |course| %>
+    <%= render 'courses/course', course: course%>
+  <% end %>
+</div>

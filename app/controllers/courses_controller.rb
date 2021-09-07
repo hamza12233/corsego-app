@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
+    @courses = params[:search].present? ? @courses.search_courses(params[:search]) : Course.all
   end
 
   # GET /courses/1 or /courses/1.json
