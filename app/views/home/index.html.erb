@@ -28,9 +28,9 @@
 </div>
 
 <hr>
-<h2>Most Recent Courses</h2>
+<h2>Latest Courses</h2>
 <div class="card-columns">
-  <%@courses.each do |course| %>
+  <%@latest_courses.each do |course| %>
     <%= render 'courses/course', course: course%>
   <% end %>
 </div>

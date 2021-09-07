@@ -15,6 +15,9 @@ gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'faker'
 gem 'devise'
+gem 'friendly_id', '~> 5.4.0'
+gem 'dotenv-rails'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

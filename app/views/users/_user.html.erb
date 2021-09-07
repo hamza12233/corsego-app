@@ -1,0 +1,25 @@
+<div class="card mb-2">
+  <div class="card-header">
+    <i class="fa fa-user"></i>
+    <%= user.email %>
+  </div>
+  <div class="card-footer">
+    Signed up
+    <%= time_ago_in_words(user.created_at) %>
+  </div>
+  <div class="card-footer">
+    <%= user.sign_in_count %>
+    <%= user.current_sign_in_at %>
+    <%= user.last_sign_in_at %>
+    <%= user.current_sign_in_ip %>
+    <%= user.last_sign_in_ip %>
+  </div>
+  <div class="card-footer">
+    Confirmed email?
+    <% if user.confirmed_at.present? %>
+      <span class="badge badge-success">Yes</span>
+    <% else %>
+      <span class="badge badge-danger">No</span>
+    <% end %>
+  </div>
+</div>

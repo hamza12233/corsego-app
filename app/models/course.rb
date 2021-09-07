@@ -8,4 +8,7 @@ class Course < ApplicationRecord
 
   scope :search_courses, ->(search) { where("title ILIKE ?", "%#{search}%") }
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end
