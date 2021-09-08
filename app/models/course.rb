@@ -1,4 +1,12 @@
 class Course < ApplicationRecord
+  ATTRIBUTE_WHITELIST = [
+    :title,
+    :description,
+    :short_description,
+    :level,
+    :language,
+    :price
+  ].freeze
   validates :title, presence: true
   validates :description, presence: true, length:{ minimum: 5 }
 

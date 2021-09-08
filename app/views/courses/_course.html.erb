@@ -1,10 +1,27 @@
 <div class="card mb-2">
   <div class="card-header">
-    <i class="fa fa-book"></i>
+    <i class="fa fa-graduation-cap"></i>
     <%= link_to course.title, course_path(course) %>
   </div>
   <div class="card-body">
-    <%= course.description %>
+    <%= course.short_description %>
+  </div>
+  <div class="card-footer text-center">
+    <%= number_to_currency(course.price) %>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-md-6">
+        <i class="fa fa-globe-africa"></i>
+        <%= course.language %>
+      </div>
+      <div class="col-md-6">
+        <div class="text-right">
+          <i class="fa fa-signal"></i>
+          <%= course.level %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="card-footer">
     <i class="far fa-clock"></i>
