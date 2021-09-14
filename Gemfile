@@ -17,6 +17,10 @@ gem 'faker'
 gem 'devise'
 gem 'friendly_id', '~> 5.4.0'
 gem 'dotenv-rails'
+gem "rolify"
+gem "pundit"
+
+
 
 
 # Use Redis adapter to run Action Cable in production

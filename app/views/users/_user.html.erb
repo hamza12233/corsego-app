@@ -22,4 +22,12 @@
       <span class="badge badge-danger">No</span>
     <% end %>
   </div>
+  <div class="card-footer">
+    <% user.roles.each do |role| %>
+      <div> Role: <%= role.name %></div>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Edit roles', edit_user_path(user), class:'btn btn-sm btn-warning'%>
+  </div>
 </div>
