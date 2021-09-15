@@ -30,9 +30,8 @@
     <%= course.user.email %>
   </div>
   <div class="card-footer">
-    <%= link_to 'Show', course, class:'btn btn-sm btn-primary' %>
-    <%= link_to 'Edit', edit_course_path(course), class:'btn btn-sm btn-warning' %>
-    <%= link_to 'Destroy', course, class:'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit', edit_course_path(course), class:'btn btn-sm btn-warning' if policy(course).edit?%>
+    <%= link_to 'Destroy', course, class:'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if policy(course).destroy? %>
   </div>
 
 </div>
