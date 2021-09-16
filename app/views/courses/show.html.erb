@@ -1,4 +1,11 @@
-<%= render 'courses/course', course: @course %>
+<div class="row">
+  <div class="col-lg-6">
+    <%= render 'courses/course', course: @course %>
+  </div>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+  <div class="col-lg-6">
+    <% @lessons.each do |lesson| %>
+      <%= render 'lessons/lesson', lesson: lesson %>
+    <% end %>
+  </div>
+</div>
