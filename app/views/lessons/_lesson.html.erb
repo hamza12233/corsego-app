@@ -1,13 +1,17 @@
 <div class="card">
   <div class="card-header">
-    <%= link_to lesson.title, lesson %>
+    <%= link_to lesson.title, course_lesson_path(@course, lesson) %>
   </div>
-  <div class="card-body">
-    <%= lesson.content %>
-  </div>
-  <div class="card-footer">
-    <%= link_to 'Edit', edit_lesson_path(lesson), class:'btn btn-sm btn-warning' %>
-    <%= link_to 'Destroy', lesson, class:'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-
+  <% if policy(lesson).show? %>
+    <div class="card-body">
+      <%= lesson.content %>
+    </div>
+  <% end %>
+  <% if policy(lesson).edit?%>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_course_lesson_path(@course,lesson), class:'btn btn-sm btn-warning' %>
+      <%= link_to 'Destroy', [ @course,lesson], class:'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
 </div>
+<p></p>

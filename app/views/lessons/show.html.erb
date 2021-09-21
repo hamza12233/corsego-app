@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" ><%= link_to 'Courses', courses_path %></li>
+    <li class="breadcrumb-item"><%= link_to @lesson.course.title, course_path(@lesson.course) %></li>
+    <li class="breadcrumb-item"><%= link_to @lesson.title, course_lesson_path(@lesson) %> </li>
+  </ol>
+
 
 <%= render 'lessons/lesson', lesson: @lesson%>
 
