@@ -1,3 +1,8 @@
+<% content_for :title do %>
+  Corsego
+  /|
+  <%= @course.title %>
+<% end %>
 <div class="row">
   <div class="col-lg-6">
     <%= render 'courses/course', course: @course %>

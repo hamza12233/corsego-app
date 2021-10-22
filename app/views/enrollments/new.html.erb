@@ -1,0 +1,13 @@
+<div class="card-header">
+  <h1>
+    <i class="fa fa-lock-open">New Enrollment</i>
+  </h1>
+</div>
+
+<div class="card-body">
+  <%= render 'form', enrollment: @enrollment %>
+</div>
+
+<div class="card-footer">
+  <%= link_to 'Back', enrollments_path %>
+</div>

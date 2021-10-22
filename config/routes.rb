@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :enrollments
   get 'user/index'
   root 'home#index'
   devise_for :users

@@ -123,6 +123,7 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (4.11.0)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -245,6 +246,7 @@ DEPENDENCIES
   friendly_id (~> 5.4.0)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pagy
   pg (~> 1.1)
   pry
   puma (~> 5.0)

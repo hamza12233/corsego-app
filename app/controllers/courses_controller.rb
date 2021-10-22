@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
-    @courses = params[:search].present? ? @courses.search_courses(params[:search]) : Course.all
+    @pagy, @courses = pagy(params[:search].present? ? @courses.search_courses(params[:search]) : Course.all)
   end
 
   def show

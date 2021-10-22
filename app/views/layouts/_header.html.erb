@@ -25,6 +25,12 @@
             Users
           <% end %>
         </li>
+        <li class="nav-item <%= 'active font-weight-bold' if current_page?(enrollments_path) %>" >
+          <%= link_to enrollments_path, class: "nav-link" do %>
+            <i class="fa fa-lock-open" aria-hidden="true"></i>
+            Enrollments
+          <% end %>
+        </li>
         <li class="nav-item <%= 'active font-weight-bold' if current_page?(new_course_path) %>" >
           <%= link_to new_course_path, class: "nav-link" do %>
             <i class="fa fa-plus" aria-hidden="true"></i>

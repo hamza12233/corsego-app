@@ -19,7 +19,7 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'dotenv-rails'
 gem "rolify"
 gem "pundit"
-
+gem "pagy"
 
 
 

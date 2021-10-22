@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   include Pundit
+  include Pagy::Backend
 
   after_action :user_actitvity
 
