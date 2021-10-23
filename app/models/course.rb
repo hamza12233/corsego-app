@@ -25,7 +25,7 @@ class Course < ApplicationRecord
     title
   end
 
-  def bought(user)
+  def bought(user) #check id user bought a course
     self.enrollments.where(user_id: [user.id], course_id: [course.id].empty? )
   end
 

@@ -1,13 +1,18 @@
 <div class="card-header">
-  <h1>
-    <i class="fa fa-lock-open">New Enrollment</i>
-  </h1>
+  <h3>
+    <i class="fa fa-graduation-cap"></i>
+    <%= link_to @course.title, course_path(@course) %>
+    <hr>
+    <i class="fa fa-lock-open">Buy course</i>
+  </h3>
 </div>
 
 <div class="card-body">
-  <%= render 'form', enrollment: @enrollment %>
+  <%= form_tag course_enrollments_path(@course) do %>
+    <% submit_tag "pay #{@course.price}", class:"btn btn-lg btn-success"%>
+  <% end %>
 </div>
 
 <div class="card-footer">
-  <%= link_to 'Back', enrollments_path %>
+  <%= link_to 'Back', course_path(@course) %>
 </div>
